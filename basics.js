@@ -11,7 +11,7 @@ console.log("this logs in the console");
 3. Boolean
 4. Bigint
 
-5. undefined - exists but defination will be there in future
+5. undefined - exists but defination is not there will be there in future
 6. null - empty not 0   
 
 
@@ -80,3 +80,63 @@ console.log(" myscore vals isnotSame:", myscore != 99);
 
 console.log("false and true as input of && op:", isLoggedin && isPaid); //both needs to be true other wise its false whatever the case
 console.log("false and true as input of || op:", isLoggedin || isPaid); //just one needs to be true for output to be true
+
+/* data types */
+
+/* 
+1. primitive
+string 
+boolean
+number
+null
+undefined
+Symbol
+
+
+2. non primitive
+ objects
+ sub cat => array,funcitons, etc.
+*/
+
+// NUMBER
+let balance = 120;
+let anotherBalance = new Number(120); // CREATES A COMPLEX DATATYPE(or objects)
+
+console.log(typeof balance); // gives type of the variable
+console.log(typeof anotherBalance);
+
+//BOOLEAN
+let isActive = true;
+let isReallyactive = new Boolean(true); // not recommended way
+
+console.log(typeof isActive);
+console.log(typeof isReallyactive);
+
+// NULL,UNDEFINED AND NOT DEFINED
+let firstname;
+console.log(firstname); //will give undefined becasue its not defined and not 0 thats why we dont get 0 for it
+//or we could just assign it  = undefined results the same
+// but null
+firstname = null;
+console.log(firstname); // will give null cause its actually null
+
+//  and  this is not defined will throw an error =>
+
+// console.log(lastname); uncomment to try
+
+//STRING
+let myString = "hello";
+let myStringone = "nihao";
+let usernameTwo = "saksham";
+
+/*backtics replaced the classic " "+" " concat of strings*/
+let greetMessage = `Hello ${usernameTwo} !`;
+console.log(greetMessage);
+
+//SYMBOL  it makes sure there is uniqueness
+let sym1 = Symbol("saksham");
+let sym2 = Symbol("saksham");
+console.log(sym1 == sym2);
+console.log(sym1);
+
+// NON PRIMITIVES OBJECTS
