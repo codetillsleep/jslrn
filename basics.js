@@ -140,3 +140,28 @@ console.log(sym1 == sym2);
 console.log(sym1);
 
 // NON PRIMITIVES OBJECTS
+// 1. objects
+let usernameThree = { firstname: "saksham", lastname: "sharma" };
+console.log(usernameThree);
+console.log(typeof usernameThree);
+//these can be changed like =>
+usernameThree.firstname = "newname";
+console.log(usernameThree);
+
+//another way to define
+let usernameFour = { "first name": "MR S", lastname: "s" };
+usernameFour["first name"] = "this is changed name";
+console.log(usernameFour);
+
+let today = new Date();
+console.log(today.getDate());
+
+// 2. array
+let heros = ["a", "b", "c", true, 5, 5.494949];
+for (i = 0; i < 6; i++) {
+  console.log(heros[i]);
+}
+// same as above but better js way
+for (const elements of heros) {
+  console.log(elements);
+}
