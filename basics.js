@@ -1,4 +1,4 @@
-/* this file is mostly one time read as its all basics */
+/* this file is mostly one time read as its all basics and also it doesnot contains core development aspects like dom and stuff */
 
 // classic print :)
 console.log("this logs in the console");
@@ -164,4 +164,29 @@ for (i = 0; i < 6; i++) {
 // same as above but better js way
 for (const elements of heros) {
   console.log(elements);
+}
+
+// condition-challenges
+
+let num1 = 9;
+let num2 = 8;
+if (num1 < num2) {
+  console.log(num1, "is smaller that", num2);
+} else {
+  console.log(num1, "is greater than", num2);
+}
+
+let username1 = "sleeptillash";
+anotherUsername = "sleeptillash";
+
+if (username1 == anotherUsername) {
+  console.log("pick another username");
+}
+
+let arr2 = [];
+
+if (arr2.length === 0) {
+  console.log("array is empty");
+} else {
+  console.log(arr2);
 }
