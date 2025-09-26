@@ -2,6 +2,7 @@
 /*
 
 
+// <--------------------------------->  Arrays  <----------------------------------------->
 
 
 1. Declare an array named colors that contains the strings "blue","red","green"and "orange"
@@ -62,3 +63,30 @@ check if "Blue" is in colors if it is store the result in isBlueInColors in vari
 console.log(colors);
 let isBlueInColors = colors.includes("blue");
 console.log(isBlueInColors);
+
+// <---------------------------------->  Loops  <----------------------------------------->
+// create a lopp that counts from 30 to 1 and stores the the numbers in an array named 'countdown'
+let countdown = [];
+i = 30;
+while (i != 0) {
+  countdown.push(i);
+  i--;
+}
+console.log(countdown);
+// use dowhile to propmt a user to enter a color until they enter "stop" store each color in an array called 'pcolors' use in browser console wont run here since node cant run "prompt".
+// let pcolors = [];
+// let k;
+// do {
+//   k = prompt(`enter color(type 'stop' to stop):`);
+//   pcolors.push(k);
+// } while (k != "stop");
+// console.log(pcolors);
+
+// write a loop that multiplies each element of an array `[5,4,2,3]` by 2 and stores the result in new array named "mularr"
+
+let arr3 = [5, 4, 2, 3];
+let mularr = [];
+for (i = 0; i != arr3.length; i++) {
+  mularr[i] = arr3[i] * 2;
+}
+console.log(mularr);

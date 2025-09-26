@@ -190,3 +190,4 @@ if (arr2.length === 0) {
 } else {
   console.log(arr2);
 }
+// loops
