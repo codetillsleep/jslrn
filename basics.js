@@ -190,4 +190,16 @@ if (arr2.length === 0) {
 } else {
   console.log(arr2);
 }
-// loops
+
+// functions in js
+function greet(name) {
+  console.log(`Hello ${name}`);
+}
+
+greet("Saksham");
+//arrow functions
+const greet2 = (name) => {
+  console.log(`Holla ${name}`);
+};
+
+greet2("Saksham");

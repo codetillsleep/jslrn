@@ -90,3 +90,10 @@ for (i = 0; i != arr3.length; i++) {
   mularr[i] = arr3[i] * 2;
 }
 console.log(mularr);
+
+// functions in js
+function greet(name) {
+  console.log("HELLO", name);
+}
+
+greet("saksham");
