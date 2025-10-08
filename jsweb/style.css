@@ -1,4 +1,17 @@
+body {
+  text-align: center;
+  color: azure;
+  background-color: gray;
+}
+
 h1 {
   color: blueviolet;
   text-transform: uppercase;
+}
+
+#example-1 {
+  background-color: black;
+  color: azure;
+  justify-items: center;
+  align-items: center;
 }
