@@ -1,7 +1,7 @@
 body {
   text-align: center;
   color: azure;
-  background-color: gray;
+  background-color: black;
 }
 
 h1 {
@@ -10,8 +10,13 @@ h1 {
 }
 
 #example-1 {
-  background-color: black;
   color: azure;
   justify-items: center;
   align-items: center;
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+  color: #1a1a1a;
 }
