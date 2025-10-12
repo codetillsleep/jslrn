@@ -35,3 +35,39 @@ document
   .addEventListener("click", function () {
     document.getElementById("taskList").lastElementChild.remove();
   });
+
+//example-6
+
+document.getElementById("clickme").addEventListener("click", function () {
+  alert("never use alerts,unless needed its not user friendly ");
+});
+
+//example-7
+
+document.getElementById("itmlist").addEventListener("click", function (event) {
+  if (event.target && event.target.matches(".itm")) {
+    alert("You selected :" + event.target.textContent);
+  }
+});
+//example-8
+document
+  .getElementById("feedbackForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    let feedback = document.getElementById("feedbackInput").value;
+    document.getElementById(
+      "feedbackDisplay"
+    ).textContent = `feedback is: ${feedback}`;
+  });
+//example-9
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("domStatus").textContent =
+    "dom fully loaded at this point";
+});
+
+//example-10
+document
+  .getElementById("toggleHighlight")
+  .addEventListener("click", function () {
+    document.getElementById("descriptionText").classList.toggle("highlight");
+  });

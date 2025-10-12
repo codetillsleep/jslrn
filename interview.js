@@ -10,3 +10,6 @@ console.log(firstname); // will give null cause its actually null
 
 //  and  this is not defined meaning it does not exit to begin with will throw an error =>
 // console.log(lastname); uncomment to try
+
+/*difference between function() and ()=>{
+    }   */
