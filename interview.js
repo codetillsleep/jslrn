@@ -13,4 +13,4 @@ console.log(firstname); // will give null cause its actually null
 
 /*difference between function(){} and ()=>{}   */
 
-/* constructor function*/
+/* constructor function vs function*/
