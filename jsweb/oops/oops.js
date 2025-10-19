@@ -84,22 +84,101 @@
 // let myArray = [1, 2, 3];
 // console.log(myArray.wuwu());
 /*class */
-class Vehical {
-  constructor(make, model) {
-    this.make = make;
-    this.model = model;
-  }
-  start() {
-    return `${this.model} is car from ${this.make} `;
+// class Vehical {
+//   constructor(make, model) {
+//     this.make = make;
+//     this.model = model;
+//   }
+//   start() {
+//     return `${this.model} is car from ${this.make} `;
+//   }
+// }
+
+// class Car extends Vehical {
+//   drive() {
+//     return `${this.make}: This is an inheritance example`;
+//   }
+// }
+
+// let myCar = new Car("Toyota", "Corolla");
+// console.log(myCar.start());
+// console.log(myCar.drive());
+
+// Encapsulation
+
+// class BankAccount {
+//   #balance = 0;
+//   deposit(amount) {
+//     this.#balance += amount;
+//     return this.#balance;
+//   }
+//   getBalance() {
+//     return `$ ${this.#balance}`;
+//   }
+// }
+
+// let account = new BankAccount();
+// console.log(account.getBalance());
+
+// //Abstraction
+
+// class CoffeeMachine {
+//   start() {
+//     //call DB
+//     //filter value
+//     return `starting the machine`;
+//   }
+//   brewCoffee() {
+//     // complex cal
+//     return `brewing coffee`;
+//   }
+//   pressStartButton() {
+//     let message1 = this.start();
+//     let message2 = this.brewCoffee();
+//     return `${message1}\n${message2}`;
+//   }
+// }
+// let myMachine = new CoffeeMachine();
+// // console.log(myMachine.start());
+// // console.log(myMachine.brewCoffee());
+// console.log(myMachine.pressStartButton());
+
+// polymorphism
+class Bird {
+  fly() {
+    return `Flying...`;
   }
 }
 
-class Car extends Vehical {
-  drive() {
-    return `${this.make}: This is an inheritance example`;
+class Penguin extends Bird {
+  fly() {
+    return `Penguins cant fly`;
+  }
+}
+let bird = new Bird();
+let penguin = new Penguin();
+console.log(bird.fly());
+console.log(penguin.fly());
+
+// static method
+
+class Calculator {
+  static add(a, b) {
+    return a + b;
   }
 }
 
-let myCar = new Car("Toyota", "Corolla");
-console.log(myCar.start());
-console.log(myCar.drive());
+console.log(Calculator.add(5, 3));
+
+// getters and setters
+function Animal() {
+  function speak() {
+    return `Animal speaking`;
+  }
+}
+
+function Dog() {
+  function bark() {
+    return `Woof!`;
+  }
+}
