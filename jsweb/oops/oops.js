@@ -143,42 +143,55 @@
 // // console.log(myMachine.brewCoffee());
 // console.log(myMachine.pressStartButton());
 
-// polymorphism
-class Bird {
-  fly() {
-    return `Flying...`;
+// // polymorphism
+// class Bird {
+//   fly() {
+//     return `Flying...`;
+//   }
+// }
+
+// class Penguin extends Bird {
+//   fly() {
+//     return `Penguins cant fly`;
+//   }
+// }
+// let bird = new Bird();
+// let penguin = new Penguin();
+// console.log(bird.fly());
+// console.log(penguin.fly());
+
+// // static method
+
+// class Calculator {
+//   static add(a, b) {
+//     return a + b;
+//   }
+// }
+
+// console.log(Calculator.add(5, 3));
+
+// Getters and Setters
+class Employee {
+  #salary;
+  constructor(name, salary) {
+    if (salary < 0) {
+      throw new Error("salary cannot be in negative");
+    }
+    this.name = name;
+    this.#salary = salary;
+  }
+  get salary() {
+    return `You are not allowed to see salary`;
+  }
+
+  set salary(value) {
+    if (value < 0) {
+      console.error("Invalid Salary");
+    } else {
+      this._salary = value;
+    }
   }
 }
-
-class Penguin extends Bird {
-  fly() {
-    return `Penguins cant fly`;
-  }
-}
-let bird = new Bird();
-let penguin = new Penguin();
-console.log(bird.fly());
-console.log(penguin.fly());
-
-// static method
-
-class Calculator {
-  static add(a, b) {
-    return a + b;
-  }
-}
-
-console.log(Calculator.add(5, 3));
-
-// getters and setters
-function Animal() {
-  function speak() {
-    return `Animal speaking`;
-  }
-}
-
-function Dog() {
-  function bark() {
-    return `Woof!`;
-  }
-}
+let emp = new Employee("Alice", -50000);
+console.log(emp._salary);
+emp.salary = 60000;
