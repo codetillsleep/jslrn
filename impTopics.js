@@ -16,3 +16,5 @@ console.log(firstname); // will give null cause its actually null
 /* constructor function vs function*/
 
 // abstraction, encapsulation, polymorphism,
+
+//bind,call and apply

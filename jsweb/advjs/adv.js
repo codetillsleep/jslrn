@@ -50,12 +50,65 @@
 //   })
 //   .catch((error) => console.error(error));
 
-//prototypal inheritance
-function Person(name) {
-  this.name = name;
+// //prototypal inheritance
+// function Person(name) {
+//   this.name = name;
+// }
+// Person.prototype.greet = function () {
+//   console.log(`hello my name is ${this.name}`);
+// };
+// let saksham = new Person("saksham");
+// saksham.greet();
+
+// // thiscontext
+
+// const person = {
+//   name: "saksham",
+//   greet() {
+//     console.log(`Hi I am ${this.name}`);
+//   },
+// };
+// person.greet();
+// // this context is lost here ==>
+// const greetFunction = person.greet;
+// greetFunction();
+// // binding the context
+
+// const boundGreet = person.greet.bind({ name: "John" });
+// boundGreet();
+
+// async and await
+function fetchUserData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ name: "saksham", url: "testurl.com" });
+    }, 3000);
+  });
 }
-Person.prototype.greet = function () {
-  console.log(`hello my name is ${this.name}`);
-};
-let saksham = new Person("saksham");
-saksham.greet();
+
+async function getUserData() {
+  try {
+    console.log("fetching user data...");
+    const userData = await fetchUserData();
+    console.log("User Data fetched Successfully");
+
+    console.log("User Data:", userData);
+  } catch (error) {
+    console.log("error fetching data", error);
+  }
+}
+
+getUserData();
+
+// modules and commonjs
+//es6 modules
+
+export function add(a, b) {
+  return a + b;
+}
+export function subtract(a, b) {
+  b - a;
+}
+export default function multiply(a, b) {
+  b * a;
+}
