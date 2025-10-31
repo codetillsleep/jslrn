@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const newTask = {
       id: Date.now(),
       text: tasktext,
-      isCompleted: false,
+      completed: false,
     };
     tasks.push(newTask);
     saveTasks();
@@ -22,7 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function renderTasks(task) {
-    console.log(task);
+    const li = document.createElement("li");
+    li.setAttribute("data-id", task.id);
+    if (task.completed) li.classList.add("completed");
+    li.innerHTML = `
+    <span>${task.text}</span>
+    <button>delete</button>
+    `;
+    li.addEventListener("click", (e) => {
+      if (e.target.tagName === "BUTTON") return;
+      task.completed = !task.completed;
+      li.classList.toogle("completed");
+      saveTasks();
+    });
+    todoList.appendChild(li);
   }
   function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
