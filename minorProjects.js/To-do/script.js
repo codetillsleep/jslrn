@@ -1,51 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const todoInput = document.getElementById("todo-input");
-  const addTaskButton = document.getElementById("add-task-btn");
-  const todoList = document.getElementById("todo-list");
-  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  cityInput = document.getElementById("city-input");
+  getWeatherBtn = document.getElementById("get-weather-btn");
+  WeatherInfo = document.getElementById("weather-info");
+  cityNameDisplay = document.getElementById("city-name");
+  temperatureDisplay = document.getElementById("temperature");
+  descriptionDisplay = document.getElementById("description");
+  errorMessage = document.getElementById("error-message");
+  const API_KEY = "76864609e78a023d0436f96ae89e2b30";
 
-  tasks.forEach((task) => renderTask(task));
-  addTaskButton.addEventListener("click", () => {
-    const taskText = todoInput.value.trim();
-    if (taskText === "") return;
-    const newTask = {
-      id: Date.now(),
-      text: taskText,
-      completed: false,
-    };
-    tasks.push(newTask);
-    saveTasks();
-    renderTask(newTask);
-    todoInput.value = "";
-    console.log(tasks);
+  getWeatherBtn.addEventListener("click", async () => {
+    const city = cityInput.value.trim();
+    if (!city) return;
+
+    try {
+      const weatherData = await fetchWeatherData(city);
+      displayWeatherData(weatherData);
+    } catch (error) {
+      showError();
+    }
+
+    async function fetchWeatherData(city) {
+      //gets the data
+    }
+    function displayWeatherData(weatherData) {
+      //display
+    }
+    function showError() {
+      WeatherInfo.classList.add("hidden");
+      errorMessage.classList.remove("hidden");
+    }
   });
-
-  function renderTask(task) {
-    const li = document.createElement("li");
-    li.setAttribute("data-id", task.id);
-    if (task.completed) li.classList.add("completed");
-    li.innerHTML = `
-    <span>${task.text}</span>
-    <button>delete</button>`;
-
-    li.addEventListener("click", (e) => {
-      if (e.target.tagName === "BUTTON") return;
-      task.completed = !task.completed;
-      li.classList.toggle("completed");
-      saveTasks();
-    });
-
-    li.querySelector("button").addEventListener("click", (e) => {
-      e.stopPropagation(); //prevent toggle from firing
-      tasks = tasks.filter((t) => t.id !== task.id);
-      li.remove();
-      saveTasks();
-    });
-
-    todoList.appendChild(li);
-  }
-
-  function saveTasks() {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }
 });
