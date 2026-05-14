@@ -1,1 +1,1 @@
-repo for learning js 
+repo for revising js 
